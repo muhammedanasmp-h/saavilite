@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saavi Lite | Premium Security Solutions</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Lucide Icons (Fallback for some icons) -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="style.css?v=1.1">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <a href="#hero" class="logo">
+                    <img src="asset/1771486831996.png" alt="" class="logo-img">
+                    <span>SAAVI <b>LITE</b></span>
+                </a>
+                <ul class="nav-links">
+                    <li><a href="#hero">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <div class="menu-toggle">☰</div>
+            </nav>
+        </div>
+    </header>
+
+    <section id="hero" class="hero">
+        <canvas id="hero-canvas"></canvas>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <div class="hero-glow-line"></div>
+            <h1>Premium Security & LED Solutions</h1>
+            <p class="hero-tagline">Innovation Meets Protection</p>
+            <div class="cta-buttons">
+                <a href="tel:+919447714301" class="btn btn-primary">Expert Consultation</a>
+                <a href="https://wa.me/919447714301" target="_blank" class="btn btn-secondary">Instant Inquiry</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="container about-content">
+            <div class="section-header">
+                <h2>Our Vision</h2>
+                <div class="underline-glow"></div>
+            </div>
+            <p>At Saavi Lite, we specialize in delivering state-of-the-art CCTV surveillance and premium LED board
+                solutions. With a focus on reliability and advanced technology, we ensure your business and assets are
+                protected and visible.</p>
+        </div>
+    </section>
+
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-header">
+                <h2>Elite Services</h2>
+                <div class="underline-glow"></div>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <i data-lucide="shield-check"></i>
+                    <h3>CCTV Installation</h3>
+                    <p>End-to-end security deployment for commercial and residential projects.</p>
+                </div>
+                <div class="service-card">
+                    <i data-lucide="settings"></i>
+                    <h3>CCTV Maintenance</h3>
+                    <p>Regular performance audits and repairs for maximum uptime.</p>
+                </div>
+                <div class="service-card">
+                    <i data-lucide="monitor"></i>
+                    <h3>LED Board Systems</h3>
+                    <p>High-impact digital signage solutions tailored to your brand.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="gallery" class="gallery">
+        <div class="container">
+            <div class="section-header">
+                <h2>Work Vault</h2>
+                <div class="underline-glow"></div>
+            </div>
+
+            <div class="gallery-filters">
+                <button class="filter-btn active" data-filter="all">All Access</button>
+                <button class="filter-btn" data-filter="cctv-installation">Installation</button>
+                <button class="filter-btn" data-filter="cctv-maintenance">Maintenance</button>
+                <button class="filter-btn" data-filter="led-board">LED Boards</button>
+                <button class="filter-btn" data-filter="completed">Completed</button>
+            </div>
+
+            <div class="gallery-masonry" id="gallery-grid">
+                <!-- Data loaded via script.js -->
+            </div>
+
+            <div class="load-more-container">
+                <button id="load-more" class="btn btn-secondary">Load More Projects</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact-wrapper container">
+        <div class="contact-card">
+            <div class="section-header" style="text-align: left; margin-bottom: 40px;">
+                <h2>Inquire Now</h2>
+                <div class="underline-glow" style="margin: 0;"></div>
+            </div>
+            <div class="contact-info">
+                <div class="info-item">
+                    <i data-lucide="mail"></i>
+                    <div>
+                        <h4>Email Us</h4>
+                        <p>saavilite@gmail.com</p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <i data-lucide="phone"></i>
+                    <div>
+                        <h4>Call Support</h4>
+                        <p>+91 9447 714 301 | +91 8714 061 286</p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <i data-lucide="map-pin"></i>
+                    <div>
+                        <h4>Our Office</h4>
+                        <p>First Floor, Opp. CSI Mission Hospital, Near Al-Saj Convention Center, Kazhakuttom,
+                            Thiruvananthapuram - 695582</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="contact-map">
+            <iframe width="100%" height="100%" frameborder="0" style="border:0; min-height: 400px;"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63148.68361537213!2d76.84882582167969!3d8.530396400000007!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b05be170d9a6f1d%3A0x63359d99216ec7f0!2sKazhakkoottam%2C%20Thiruvananthapuram%2C%20Kerala!5e0!3m2!1sen!2sin!4v1700000000000"
+                allowfullscreen></iframe>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <a href="#hero" class="logo">
+                    <img src="asset/1771486831996.png" alt="" class="logo-img">
+                    <span>SAAVI <b>LITE</b></span>
+                </a>
+                <div class="footer-links">
+                    <a href="#about">About</a>
+                    <a href="#services">Services</a>
+                    <a href="#gallery">Gallery</a>
+                    <a href="/admin">Admin Access</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Saavi Lite. All rights reserved. Secured by Next-Gen Tech.</p>
+            </div>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/919447714301" class="whatsapp-sticky" target="_blank">
+        <i data-lucide="message-circle"></i>
+    </a>
+
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox">
+        <span class="close-lightbox">&times;</span>
+        <button class="lightbox-nav prev">❮</button>
+        <button class="lightbox-nav next">❯</button>
+        <div class="lightbox-wrapper">
+            <img id="lightbox-img" src="" class="lightbox-content">
+            <div id="lightbox-caption" class="lightbox-caption"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // Init Lucide Icons
+        lucide.createIcons();
+    </script>
+</body>
+
+</html>

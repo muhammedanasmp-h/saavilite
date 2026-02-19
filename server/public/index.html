@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Saavi Lite | Elite Security & LED Systems</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css?v=2.0">
+</head>
+
+<body>
+
+    <header>
+        <div class="container">
+            <nav>
+                <a href="#hero" class="logo">
+                    <img src="asset/1771486831996.png" alt="Logo" class="logo-img">
+                    <span>SAAVI <b>LITE</b></span>
+                </a>
+                <ul class="nav-links">
+                    <li><a href="#hero">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <div class="menu-toggle">☰</div>
+            </nav>
+        </div>
+    </header>
+
+    <section id="hero" class="hero">
+        <canvas id="hero-canvas"></canvas>
+        <div class="container hero-content">
+            <h1>Premium Security & LED Solutions</h1>
+            <p class="hero-tagline">Innovation Meets Protection</p>
+            <div class="cta-buttons">
+                <a href="tel:+919447714301" class="btn btn-primary">Expert Consultation</a>
+                <a href="https://wa.me/919447714301" target="_blank" class="btn btn-secondary">Instant Inquiry</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Vision</h2>
+                <div class="underline"></div>
+            </div>
+            <p style="text-align: center; max-width: 800px; margin: 0 auto; color: var(--text-dim); font-size: 1.1rem;">
+                At Saavi Lite, we engineer state-of-the-art surveillance and digital display solutions.
+                Our mission is to empower businesses with high-fidelity security and vibrant visibility tools.
+            </p>
+        </div>
+    </section>
+
+    <section id="services" style="background: var(--bg-darker);">
+        <div class="container">
+            <div class="section-header">
+                <h2>Elite Services</h2>
+                <div class="underline"></div>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>CCTV Installation</h3>
+                    <p>End-to-end high-definition security deployment for commercial projects.</p>
+                </div>
+                <div class="service-card">
+                    <h3>System Maintenance</h3>
+                    <p>Proactive performance audits and rapid recovery services.</p>
+                </div>
+                <div class="service-card">
+                    <h3>LED Board Systems</h3>
+                    <p>High-impact digital signage tailored to your brand identity.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="gallery">
+        <div class="container">
+            <div class="section-header">
+                <h2>Work Vault</h2>
+                <div class="underline"></div>
+            </div>
+            <div class="gallery-masonry" id="gallery-grid">
+                <!-- Loaded via script.js -->
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2>Inquire Now</h2>
+                <div class="underline"></div>
+            </div>
+            <div style="text-align: center;">
+                <p style="margin-bottom: 2rem; color: var(--text-dim);">Ready to secure your future? Connect with our
+                    experts.</p>
+                <div style="display: flex; flex-direction: column; gap: 1rem; align-items: center;">
+                    <a href="mailto:saavilite@gmail.com"
+                        style="color: var(--accent-neon); text-decoration: none; font-size: 1.2rem;">saavilite@gmail.com</a>
+                    <p style="font-size: 1.1rem;">+91 9447 714 301 | +91 8714 061 286</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <a href="#hero" class="logo">
+                    <img src="asset/1771486831996.png" alt="Logo" class="logo-img">
+                    <span>SAAVI <b>LITE</b></span>
+                </a>
+                <p style="color: var(--text-dim);">&copy; 2024 Saavi Lite. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox">
+        <span class="close-lightbox">&times;</span>
+        <div style="position: relative; text-align: center;">
+            <img id="lightbox-img" src="" class="lightbox-content">
+            <div id="lightbox-caption" class="lightbox-caption"></div>
+        </div>
+    </div>
+
+    <script src="script.js?v=2.0"></script>
+</body>
+
+</html>

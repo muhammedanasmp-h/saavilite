@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saavi Lite | Admin Management</title>
+    <style>
+        :root {
+            --primary: #22d3ee;
+            --bg: #0B1220;
+            --card: rgba(255, 255, 255, 0.05);
+            --text: #F8FAFC;
+            --dim: #94A3B8;
+            --border: rgba(255, 255, 255, 0.1);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            padding: 20px;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            font-size: 1.5rem;
+            margin: 0;
+            color: var(--primary);
+        }
+
+        /* Forms */
+        .card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 24px;
+            margin-bottom: 30px;
+            backdrop-filter: blur(10px);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--dim);
+            font-size: 0.9rem;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            padding: 12px;
+            background: rgba(0, 0, 0, 0.2);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            color: #fff;
+            box-sizing: border-box;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        button {
+            background: var(--primary);
+            color: #000;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 700;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            opacity: 0.9;
+            transform: translateY(-2px);
+        }
+
+        button.secondary {
+            background: transparent;
+            border: 1px solid var(--border);
+            color: #fff;
+        }
+
+        button.danger {
+            background: #ef4444;
+            color: #fff;
+        }
+
+        /* Gallery Grid */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 24px;
+        }
+
+        .item {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .item img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+
+        .item-info {
+            padding: 16px;
+        }
+
+        .item-title {
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .item-cat {
+            font-size: 0.8rem;
+            color: var(--dim);
+            margin-bottom: 12px;
+        }
+
+        .actions {
+            display: flex;
+            gap: 10px;
+        }
+
+        .actions button {
+            padding: 8px 16px;
+            font-size: 0.8rem;
+        }
+
+        /* Auth */
+        #login-overlay {
+            position: fixed;
+            inset: 0;
+            background: var(--bg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+        }
+
+        .login-card {
+            width: 100%;
+            max-width: 360px;
+        }
+
+        #admin-panel {
+            display: none;
+        }
+
+        .loading {
+            color: var(--primary);
+            display: none;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="login-overlay">
+        <div class="card login-card">
+            <h2 style="text-align: center;">Admin Login</h2>
+            <form id="login-form">
+                <div class="form-group">
+                    <label>Username</label>
+                    <input type="text" id="user" required>
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" id="pass" required>
+                </div>
+                <button type="submit" style="width: 100%;">Access System</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="admin-panel">
+        <div class="container">
+            <header>
+                <h1>Saavi Lite <span>Admin</span></h1>
+                <button onclick="logout()" class="secondary">Logout</button>
+            </header>
+
+            <div class="card">
+                <h2 id="form-title">Add Gallery Image</h2>
+                <form id="gallery-form">
+                    <input type="hidden" id="edit-id">
+                    <div class="form-group">
+                        <label>Project Title</label>
+                        <input type="text" id="title" required placeholder="e.g. Bank Surveillance">
+                    </div>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                        <div class="form-group">
+                            <label>Category</label>
+                            <select id="category" required>
+                                <option value="CCTV Installation">CCTV Installation</option>
+                                <option value="CCTV Maintenance">CCTV Maintenance</option>
+                                <option value="LED Board Installation">LED Board Installation</option>
+                                <option value="Completed Projects">Completed Projects</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Description</label>
+                            <input type="text" id="desc" placeholder="Brief description">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Image File (Max 5MB: JPEG, PNG, WebP)</label>
+                        <input type="file" id="image" accept="image/*">
+                    </div>
+                    <button type="submit" id="submit-btn" style="width: 200px;">Upload Project</button>
+                    <button type="button" id="cancel-btn" class="secondary" style="display:none;"
+                        onclick="resetForm()">Cancel</button>
+                    <div id="upload-loading" class="loading">Processing secure upload...</div>
+                </form>
+            </div>
+
+            <h2>Live Gallery (<span id="count">0</span>/30)</h2>
+            <div class="grid" id="gallery-list"></div>
+        </div>
+    </div>
+
+    <script src="admin.js"></script>
+</body>
+
+</html>

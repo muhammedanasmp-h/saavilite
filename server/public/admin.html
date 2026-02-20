@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel — Saavi Lite</title>
+    <meta name="robots" content="noindex, nofollow">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+
+<body>
+
+    <!-- ── LOGIN VIEW ── -->
+    <div class="login-view" id="loginView">
+        <div class="login-card">
+            <div class="login-brand">
+                <img src="assets/logo.png" alt="Saavi Lite Logo" class="login-logo">
+                <h1>Saavi<span class="accent">Lite</span></h1>
+                <p>Admin Panel</p>
+            </div>
+            <form class="login-form" id="loginForm">
+                <div class="input-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" placeholder="Enter username" required autocomplete="username">
+                </div>
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" placeholder="Enter password" required
+                        autocomplete="current-password">
+                </div>
+                <button type="submit" class="btn-login" id="loginBtn">Sign In</button>
+                <div class="login-error" id="loginError"></div>
+            </form>
+        </div>
+    </div>
+
+    <!-- ── DASHBOARD VIEW ── -->
+    <div class="dashboard-view" id="dashboardView" style="display:none;">
+
+        <!-- Header -->
+        <header class="dash-header">
+            <div class="dash-header-inner">
+                <div class="dash-brand">
+                    <img src="assets/logo.png" alt="Saavi Lite Logo" class="dash-logo">
+                    <span>Saavi<span class="accent">Lite</span> Admin</span>
+                </div>
+                <div class="dash-header-actions">
+                    <a href="/" class="dash-link" target="_blank">View Site ↗</a>
+                    <button class="btn-logout" id="logoutBtn">Logout</button>
+                </div>
+            </div>
+        </header>
+
+        <main class="dash-main">
+
+            <!-- Upload Section -->
+            <section class="dash-card upload-section">
+                <div class="card-header">
+                    <h2>Upload Image</h2>
+                    <span class="photo-count" id="photoCount">0 / 30</span>
+                </div>
+
+                <div class="upload-area" id="uploadArea">
+                    <div class="upload-placeholder" id="uploadPlaceholder">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                            <polyline points="17 8 12 3 7 8" />
+                            <line x1="12" y1="3" x2="12" y2="15" />
+                        </svg>
+                        <p>Drag & drop an image or <span class="accent">browse</span></p>
+                        <small>Max 5MB • JPG, PNG, WebP, GIF</small>
+                    </div>
+                    <input type="file" id="fileInput" accept="image/jpeg,image/png,image/webp,image/gif" hidden>
+                </div>
+
+                <!-- Image Preview -->
+                <div class="preview-area" id="previewArea" style="display:none;">
+                    <img id="previewImg" src="" alt="Preview">
+                    <div class="preview-actions">
+                        <div class="input-group" style="margin-bottom:0;">
+                            <input type="text" id="captionInput" placeholder="Add a caption (optional)">
+                        </div>
+                        <div class="preview-btns">
+                            <button class="btn-cancel" id="cancelUpload">Cancel</button>
+                            <button class="btn-upload" id="confirmUpload">Upload</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="upload-status" id="uploadStatus"></div>
+            </section>
+
+            <!-- Gallery Management -->
+            <section class="dash-card">
+                <div class="card-header">
+                    <h2>Gallery</h2>
+                </div>
+                <div class="admin-gallery" id="adminGallery">
+                    <!-- Loaded dynamically -->
+                </div>
+                <p class="gallery-empty-admin" id="adminGalleryEmpty" style="display:none;">
+                    No images uploaded yet.
+                </p>
+            </section>
+
+        </main>
+    </div>
+
+    <!-- Delete Confirmation Modal -->
+    <div class="modal-overlay" id="deleteModal" style="display:none;">
+        <div class="modal-card">
+            <h3>Delete Image?</h3>
+            <p>This action cannot be undone.</p>
+            <div class="modal-actions">
+                <button class="btn-cancel" id="cancelDelete">Cancel</button>
+                <button class="btn-delete" id="confirmDelete">Delete</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/admin.js"></script>
+</body>
+
+</html>
